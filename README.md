@@ -1,13 +1,17 @@
 # Temperature Monitoring System
-
 ## Description:
 Temperature monitoring systems using FreeRTOS, The system continuously monitors the temperature and fires an alarm if the temperature exceeds the threshold value. It has three states Idle (Temperature is less than the threshold value), Alarm (Temperature is above the threshold value and alarm is active), and Config (To edit the threshold value).
 
+
+
 ## Usage:
+
+
 
 ## Components:
 ### Hardware
 ![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/Block%20Diagram%20(2).png?raw=true)
+
 |Element | Description |
 |--------|-------------|
 |MCU |The microcontroller unit (MCU) used in this project is the ATmega32. It features 32 KB of flash memory and 2 KB of SRAM. Additionally, it includes an ADC with 10-bit resolution, 32 I/O lines, and a 16-bit timer that is highly beneficial when working with a real-time operating system (RTOS). |
@@ -17,6 +21,8 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 
 
 ### Software
+![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/Task%20Diagram.jpeg?raw=true)
+
 | Layer Architecture | Component          | Description  |
 |--------------------|--------------------|--------------|
 | APP: Task 1        | Temperature Update |              |
@@ -28,5 +34,7 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 | MCAL               | DIO                |              |
 | MCAL               | ADC                |              |
 | MCAL               | UART               |              |
+
+
 
 ## Credit:
