@@ -15,16 +15,16 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 
 
 ### Software Components:
-| Layer   | Component          | Description  |
-|---------|--------------------|--------------|
-| Task 1  | Temperature Update |              |
-| Task 2  | LCD Disp           |              |
-| Task 3  | User Input         |              |
-| Task 4  | Alarm              |              |
+| Layer Architecture | Component          | Description  |
+|--------------------|--------------------|--------------|
+| APP: Task 1        | Temperature Update |              |
+| APP: Task 2        | LCD Disp           |              |
+| APP: Task 3        | User Input         |              |
+| APP: Task 4        | Alarm              |              |
 | Service |FreeRTOS            | Using a Real-Time Operating System (RTOS) in this type of application is essential, as it can become very complex and there is a high likelihood of encountering unexpected behaviors. Using FreeRTOS enables multitasking and ensures smooth flow. |
-| HAL     | LCD                |              |
-| MCAL    | DIO                |              |
-| MCAL    | ADC                |              |
-| MCAL    | UART               |              |
+| HAL                | LCD                |              |
+| MCAL               | DIO                |              |
+| MCAL               | ADC                |              |
+| MCAL               | UART               |              |
 
 ## Credit:
