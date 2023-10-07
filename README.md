@@ -5,7 +5,7 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 
 ## Usage:
 
-##Components:
+## Components:
 ### Hardware
 |Element | Description |
 |--------|-------------|
