@@ -11,15 +11,19 @@ The system contains three states: Idle State, Config State, and Alarm State. Eac
 
 1- Idle State:
 
-In this state, the system monitors the temperature by taking a sample every 100 ms. For each sample, the system compares the temperature to the preset threshold value. If it exceeds the threshold value and the alarm is enabled (Can be disabled by entering 'T'). The system will transition to the alarm state. Otherwise, no transition occurs. Also, the user requested to configure the threshold value (By Entering 'C') that triggers the system to enter the configuration state.
+In this state, the system monitors the temperature by taking a sample every 100 ms. For each sample, the system compares the temperature to the preset threshold value. If it exceeds the threshold value and the alarm is enabled (can be toggled by sending 'T'). The system will transition to the alarm state. Otherwise, no transition occurs. Also, the user requested to configure the threshold value (by sending 'C') that triggers the system to enter the configuration state.
 
 ![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/Idle.JPG?raw=true)
 
 2- Config State:
 
+In this state, the system waits for the user to input three numbers within the range of 0 - 255 as the new threshold value. In this case, the user is obligated to send either the new three numbers and/or send 'O' to approve the new threshold value or 'C' to cancel the configuration session and return to the idle state. Note that it is not recommended to stay in this state for an extended period of time, as the system will not sound an alarm if the temperature increases.
+
 ![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/config.JPG?raw=true)
 
 3- Alarm State:
+
+In this state, the system will activate the alarm LEDs and buzzer to indicate that the temperature exceeds the threshold value. Exiting this state can be achieved by either turning off the alarm (by sending 'S') or reducing the temperature below the threshold.
 
 ![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/alarming.JPG?raw=true)
 
@@ -28,12 +32,12 @@ In this state, the system monitors the temperature by taking a sample every 100 
 ### Hardware
 ![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/Block%20Diagram%20(2).png?raw=true)
 
-|Element | Description |
-|--------|-------------|
-|MCU |The microcontroller unit (MCU) used in this project is the ATmega32. It features 32 KB of flash memory and 2 KB of SRAM. Additionally, it includes an ADC with 10-bit resolution, 32 I/O lines, and a 16-bit timer that is highly beneficial when working with a real-time operating system (RTOS). |
-|LM35 | The LM35 temperature sensor is used to measure temperature within a range of -55 to 150 °C, with a linear scale factor of +10 mV/°C. |
-| HC-05 | The Bluetooth HC-05 is used to receive user input (commands) through the UART in order to modify the system's parameters. |
-|LCD 16x2 | The LCD is used to display the current temperature, threshold value, and alarm state (enabled or disabled). Additionally, it is used to alert the user when the temperature exceeds the threshold value. In addition to editing the threshold value throughout the configuration state. |
+|Element         | Description |
+|----------------|-------------|
+|MCU             |The microcontroller unit (MCU) used in this project is the ATmega32. It features 32 KB of flash memory and 2 KB of SRAM. Additionally, it includes an ADC with 10-bit resolution, 32 I/O lines, and a 16-bit timer that is highly beneficial when working with a real-time operating system (RTOS). |
+|LM35            | The LM35 temperature sensor is used to measure temperature within a range of -55 to 150 °C, with a linear scale factor of +10 mV/°C. | 
+| HC-05          | The Bluetooth HC-05 is used to receive user input (commands) through the UART in order to modify the system's parameters. |
+|LCD 16x2        | The LCD is used to display the current temperature, threshold value, and alarm state (enabled or disabled). Additionally, it is used to alert the user when the temperature exceeds the threshold value. In addition to editing the threshold value throughout the configuration state. |
 |LEDs and Buzzer | Elements to visually and audibly alert when the temperature exceeds the threshold value. |
 
 
