@@ -7,6 +7,7 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 
 ## Components:
 ### Hardware
+![Alt text](https://drive.google.com/file/d/1g2XYgbzM9B66aH-6vxsfF3qQ7P9f_Rr6/view?usp=drive_link)
 |Element | Description |
 |--------|-------------|
 |MCU |The microcontroller unit (MCU) used in this project is the ATmega32. It features 32 KB of flash memory and 2 KB of SRAM. Additionally, it includes an ADC with 10-bit resolution, 32 I/O lines, and a 16-bit timer that is highly beneficial when working with a real-time operating system (RTOS). |
