@@ -2,6 +2,8 @@
 ## Description:
 Temperature monitoring systems using FreeRTOS, The system continuously monitors the temperature and fires an alarm if the temperature exceeds the threshold value. It has three states Idle (Temperature is less than the threshold value), Alarm (Temperature is above the threshold value and alarm is active), and Config (To edit the threshold value).
 
+![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/State%20Machine.jpg?raw=true)
+
 
 
 ## Usage:
@@ -16,7 +18,7 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 |--------|-------------|
 |MCU |The microcontroller unit (MCU) used in this project is the ATmega32. It features 32 KB of flash memory and 2 KB of SRAM. Additionally, it includes an ADC with 10-bit resolution, 32 I/O lines, and a 16-bit timer that is highly beneficial when working with a real-time operating system (RTOS). |
 |LM35 | The LM35 temperature sensor is used to measure temperature within a range of -55 to 150 °C, with a linear scale factor of +10 mV/°C. |
-| HC-05 | The Bluetooth HC-05 is used to receive user input (commands) in order to change the parameters of the system. |
+| HC-05 | The Bluetooth HC-05 is used to receive user input (commands) through the UART in order to modify the system's parameters. |
 |LCD 16x2 | The LCD is used to display the current temperature, threshold value, and alarm state (enabled or disabled). Additionally, it is used to alert the user when the temperature exceeds the threshold value. In addition to editing the threshold value throughout the configuration state. |
 |LEDs and Buzzer | Elements to visually and audibly alert when the temperature exceeds the threshold value. |
 
