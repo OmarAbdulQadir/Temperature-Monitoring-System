@@ -11,7 +11,7 @@ The system contains three states: Idle State, Config State, and Alarm State. Eac
 
 1- Idle State:
 
-In this state, the system monitors the temperature by taking a sample every 100 ms. For each sample, the system compares the temperature to the preset threshold value. If it exceeds the threshold value and the alarm is enabled (can be toggled by sending 'T'). The system will transition to the alarm state. Otherwise, no transition occurs. Also, the user requested to configure the threshold value (by sending 'C') that triggers the system to enter the configuration state.
+In this state, the system monitors the temperature by taking a sample every 100 ms. For each sample, the system compares the temperature to the preset threshold value. If it exceeds the threshold value and the alarm is enabled (can be toggled by sending 'T'). The system will transition to the alarm state. Otherwise, no transition occurs. Also, if the user requests to configure the threshold value (by sending 'C') that triggers the system to enter the configuration state.
 
 ![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/Idle.JPG?raw=true)
 
@@ -32,13 +32,13 @@ In this state, the system will activate the alarm LEDs and buzzer to indicate th
 ### Hardware
 ![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/Block%20Diagram%20(2).png?raw=true)
 
-|Element         | Description |
-|----------------|-------------|
-|MCU             |The microcontroller unit (MCU) used in this project is the ATmega32. It features 32 KB of flash memory and 2 KB of SRAM. Additionally, it includes an ADC with 10-bit resolution, 32 I/O lines, and a 16-bit timer that is highly beneficial when working with a real-time operating system (RTOS). |
-|LM35            | The LM35 temperature sensor is used to measure temperature within a range of -55 to 150 °C, with a linear scale factor of +10 mV/°C. | 
-| HC-05          | The Bluetooth HC-05 is used to receive user input (commands) through the UART in order to modify the system's parameters. |
-|LCD 16x2        | The LCD is used to display the current temperature, threshold value, and alarm state (enabled or disabled). Additionally, it is used to alert the user when the temperature exceeds the threshold value. In addition to editing the threshold value throughout the configuration state. |
-|LEDs and Buzzer | Elements to visually and audibly alert when the temperature exceeds the threshold value. |
+| Element         | Description |
+|-----------------|-------------|
+| MCU             | The microcontroller unit (MCU) used in this project is the ATmega32. It features 32 KB of flash memory and 2 KB of SRAM. Additionally, it includes an ADC with 10-bit resolution, 32 I/O lines, and a 16-bit timer that is highly beneficial when working with a real-time operating system (RTOS). |
+| LM35            | The LM35 temperature sensor is used to measure temperature within a range of -55 to 150 °C, with a linear scale factor of +10 mV/°C. | 
+| HC-05           | The Bluetooth HC-05 is used to receive user input (commands) through the UART in order to modify the system's parameters. |
+| LCD 16x2        | The LCD is used to display the current temperature, threshold value, and alarm state (enabled or disabled). Additionally, it is used to alert the user when the temperature exceeds the threshold value. In addition to editing the threshold value throughout the configuration state. |
+| LEDs and Buzzer | Elements to visually and audibly alert when the temperature exceeds the threshold value. |
 
 
 ### Software
@@ -46,13 +46,13 @@ In this state, the system will activate the alarm LEDs and buzzer to indicate th
 
 | Layer Architecture | Component          | Description  |
 |--------------------|--------------------|--------------|
-| APP: Task 1        | Temperature Update |              |
-| APP: Task 2        | LCD Disp           |              |
-| APP: Task 3        | User Input         |              |
-| APP: Task 4        | Alarm              |              |
-| Service |FreeRTOS            | Using a Real-Time Operating System (RTOS) in this type of application is essential, as it can become very complex and there is a high likelihood of encountering unexpected behaviors. Using FreeRTOS enables multitasking and ensures smooth flow. |
-| HAL                | LCD                |              |
-| MCAL               | DIO                |              |
+| APP: Task 1        | Temperature Update | This task is responsible for measuring the temperature and raising the alarm flag if the temperature exceeds the threshold value. Otherwise, it will update the new temperature value on the screen. |
+| APP: Task 2        | LCD Disp           | This task is responsible for updating the values on the screen if any update flag is raised. Otherwise, nothing will happen. |
+| APP: Task 3        | User Input         | This task is responsible for receiving and validating user input data. It then calls the appropriate task to take action based on the validity of the received data. |
+| APP: Task 4        | Alarm              | This task is responsible for turning the LEDs and buzzers on and off if the system is in an alarm state. |
+| Service            | FreeRTOS           | Using a Real-Time Operating System (RTOS) in this type of application is essential, as it can become very complex and there is a high likelihood of encountering unexpected behaviors. Using FreeRTOS enables multitasking and ensures smooth flow. |
+| HAL                | LCD                | This module is responsible for communicating with the LCD display. |
+| MCAL               | DIO                | This module is responsible for configuring all the I/O pins of the microcontroller. |
 | MCAL               | ADC                |              |
 | MCAL               | UART               |              |
 
