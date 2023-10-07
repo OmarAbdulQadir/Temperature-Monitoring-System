@@ -7,7 +7,18 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 
 
 ## Usage:
+The System contains three states as described Idle State, Config State, and Alarm state. Each of the three states is different in the functionality and types of inputs. Now we are describing each state alone Starting with the Idle State.
+1- Idle State:
 
+![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/Idle.JPG?raw=true)
+
+2- Config State:
+
+![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/config.JPG?raw=true)
+
+3- Alarm State:
+
+![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/alarming.JPG?raw=true)
 
 
 ## Components:
