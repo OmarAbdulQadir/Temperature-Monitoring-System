@@ -59,3 +59,4 @@ In this state, the system will activate the alarm LEDs and buzzer to indicate th
 
 
 ## Credit:
+All thanks go to the [National Technology Institute](https://www.linkedin.com/school/nti-eg/mycompany/) for giving me the opportunity to advance my career in embedded systems. And special thanks to [Dr. Mahmoud Hussein](https://www.linkedin.com/in/mahmoudhusseinnti/) for his guidance during the course on RTOS.
