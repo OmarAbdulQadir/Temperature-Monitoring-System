@@ -53,8 +53,8 @@ In this state, the system will activate the alarm LEDs and buzzer to indicate th
 | Service            | FreeRTOS           | Using a Real-Time Operating System (RTOS) in this type of application is essential, as it can become very complex and there is a high likelihood of encountering unexpected behaviors. Using FreeRTOS enables multitasking and ensures smooth flow. |
 | HAL                | LCD                | This module is responsible for communicating with the LCD display. |
 | MCAL               | DIO                | This module is responsible for configuring all the I/O pins of the microcontroller. |
-| MCAL               | ADC                |              |
-| MCAL               | UART               |              |
+| MCAL               | ADC                | This module is responsible for configuring the ADC peripheral and managing all the conversion processes. |
+| MCAL               | UART               | This module is responsible for configuring the UART peripheral and managing all the transmission and receiving processes through the UART. |
 
 
 
