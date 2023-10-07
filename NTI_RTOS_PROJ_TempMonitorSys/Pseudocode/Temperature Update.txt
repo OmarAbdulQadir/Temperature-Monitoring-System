@@ -1,0 +1,33 @@
+Initiate ADC perepheral
+create local container for the current temp value
+Get the initial Reading
+store the initial reading in the global variable
+os_dalay - 150 ms
+for ever loop:
+	read the current temperature value
+	compare the reading with the global value
+	if changed:
+		check the current status:
+		if E_Idle:
+			store the new reading in the global variable
+			compare the current temp with the threshold:
+			if exceed:
+				check the E_alarmState event:
+				if True:
+					set the E_Alarm event, clear E_Idle, set E_UsysState
+				else:
+					set E_UcurrentTemp event
+			else:
+				set E_UcurrentTemp event
+		if E_Alarm:
+			compare the current temp with the threshold:
+			if exceed:
+				do nothing
+			else:
+				clear E_Alarm event, set E_Idle event, set E_UsysState
+				set E_UcurrentTemp event
+		if Config:
+			do nothing
+	else:
+		do nothing
+	os_dalay - 100 ms

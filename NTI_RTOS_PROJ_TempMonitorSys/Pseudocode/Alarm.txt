@@ -1,0 +1,9 @@
+Initiate the Buzzer
+Initiate the LEDS
+for ever loop:
+	LEDS_On
+	Buzzer_On
+	os_dalay - 5 ms
+	LEDS_Off
+	Buzzer_Off
+	os_dalay - 5 ms

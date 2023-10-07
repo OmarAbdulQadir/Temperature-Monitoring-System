@@ -1,0 +1,38 @@
+Initiate LCD
+create the variables containers
+for ever loop:
+	Check is E_UsysState event is set
+	if True:
+		Change the state to the selected one
+		clear E_UsysState event
+	else:
+		do nothing
+	switch states:
+	if E_Idle:
+		Check E_UcurrentTamp event is set:
+		if true:
+			update the current temp value
+			clear E_UcurrentTamp event
+		else:
+			do nothing
+		check E_UthresholdIdle is set:
+		if true:
+			update the threshold value
+			clear E_UthresholdIdle event
+		else:
+			do nothing
+		check E_UalarmState is set:
+		if true:
+			update the alarm state
+			clear E_UalarmState
+		else:
+			do nothing
+	if E_Alarm:
+			do nothing
+	if E_config:
+		check if the E_UthresholdConfig is set:
+		if true:
+			update the threshold value
+			clear E_UthresholdConfig
+	else:
+		do nothing

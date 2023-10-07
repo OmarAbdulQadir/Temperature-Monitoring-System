@@ -1,0 +1,27 @@
+Initiate UART perepheral
+Set E_Idle event
+set E_Alarm event
+os_dalay - 10 ms
+clear E_Alarm event
+set E_UsysState event
+os_dalay - 130 tick
+for ever loop:
+	Switch sys state:
+		read the user input data
+		check data validity:
+			switch on the input data:
+				E_Idle:
+					Config:	Set E_Config event, Clear E_Idle event, set E_UsysState
+					Alarm state toggle: set E_Ualarmstate, toggle alarm state variable
+				E_Config:
+					create threshold container variable
+					OK:	Save the input value in the threshold global variable, Set E_Idle event, Clear E_config event, set E_UsysState
+					Cancel:	Ignore the input value, Set E_Idle event, Clear E_config event, set E_UsysState
+					number: push to the threshold container variable
+				E_Alarm:
+					Alarm state toggle:	set E_Ualarmstate, Set E_Idle event, Clear E_alarm event, set E_UsysState, toggle alarm state variable
+				default:
+					do nothing
+	default:
+		do nothing
+	os_delay - 90 tick
