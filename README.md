@@ -10,7 +10,9 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 The system contains three states: Idle State, Config State, and Alarm State. Each of the three states differs in functionality and types of inputs. Now we will describe each state individually, starting with the Idle State.
 
 1- Idle State:
-In this state, the system monitors the temperature by taking a sample every 100 ms. For each sample, the system compares the temperature to the preset threshold value. If it exceeds the threshold value and the alarm is enabled. The system will transition to the alarm state. Otherwise, no transition occurs. Also, the user requested to configure the threshold value that triggers the system to enter the configuration state.
+
+In this state, the system monitors the temperature by taking a sample every 100 ms. For each sample, the system compares the temperature to the preset threshold value. If it exceeds the threshold value and the alarm is enabled (Can be disabled by entering 'T'). The system will transition to the alarm state. Otherwise, no transition occurs. Also, the user requested to configure the threshold value (By Entering 'C') that triggers the system to enter the configuration state.
+
 ![Alt text](https://github.com/OmarAbdulQadir/Temperature-Monitoring-System/blob/main/NTI_RTOS_PROJ_TempMonitorSys_Designs/Idle.JPG?raw=true)
 
 2- Config State:
