@@ -14,10 +14,10 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 |LEDs and Buzzer | Elements to visually and audibly alert when the temperature exceeds the threshold value. |
 
 ### Software Components:
-#### FreeRTOS:
-Using a Real-Time Operating System (RTOS) in this type of application is essential, as it can become very complex and there is a high likelihood of encountering unexpected behaviors. Using FreeRTOS enables multitasking and ensures smooth flow.
-
-##### Task1: Temperature Update
+|Layer Architecture | Component | Description |
+|-------------------|-----------|-------------|
+|FreeRTOS | Using a Real-Time Operating System (RTOS) in this type of application is essential, as it can become very complex and there is a high likelihood of encountering unexpected behaviors. Using FreeRTOS enables multitasking and ensures smooth flow. |
+|Task1 | Temperature Update | test |
 
 ##### Task2: LCD Disp
 
