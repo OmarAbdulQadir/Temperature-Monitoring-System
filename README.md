@@ -5,10 +5,11 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 
 ## Usage:
 
-## Components:
-### Hardware
-#### MCU:
-The microcontroller unit (MCU) used in this project is the ATmega32. It features 32 KB of flash memory and 2 KB of SRAM. Additionally, it includes an ADC with 10-bit resolution, 32 I/O lines, and a 16-bit timer that is highly beneficial when working with a real-time operating system (RTOS).
+## Hardware Components:
+|Element | Description |
+|--------|-------------|
+|MCU |The microcontroller unit (MCU) used in this project is the ATmega32. It features 32 KB of flash memory and 2 KB of SRAM. Additionally, it includes an ADC with 10-bit resolution, 32 I/O lines, and a 16-bit timer that is highly beneficial when working with a real-time operating system (RTOS).
+ |
 
 #### Temperature sensor LM35:
 The LM35 temperature sensor is used to measure temperature within a range of -55 to 150 °C, with a linear scale factor of +10 mV/°C.
