@@ -17,7 +17,7 @@ Temperature monitoring systems using FreeRTOS, The system continuously monitors 
 ### Software Components:
 | Layer Architecture | Component          | Description  |
 |--------------------|--------------------|--------------|
-| FreeRTOS           | Using a Real-Time Operating System (RTOS) in this type of application is essential, as it can become very complex and there is a high likelihood of encountering unexpected behaviors. Using FreeRTOS enables multitasking and ensures smooth flow. |
+| APP                |FreeRTOS            | Using a Real-Time Operating System (RTOS) in this type of application is essential, as it can become very complex and there is a high likelihood of encountering unexpected behaviors. Using FreeRTOS enables multitasking and ensures smooth flow. |
 | Task1              | Temperature Update |              |
 | Task2              | LCD Disp           |              |
 | Task3              | User Input         |              |
